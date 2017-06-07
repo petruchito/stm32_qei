@@ -33,7 +33,7 @@
  */
 
 #include <hal.h>
-#include <core/stm32_qei/qei.h>
+#include "qei.h"
 
 #if HAL_USE_QEI || defined(__DOXYGEN__)
 
