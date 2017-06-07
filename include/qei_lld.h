@@ -367,6 +367,7 @@ extern "C" {
   void qei_lld_stop(QEIDriver *qeip);
   void qei_lld_enable(QEIDriver *qeip);
   void qei_lld_disable(QEIDriver *qeip);
+  void qei_lld_setmax(QEIDriver *qeip, uint16_t value);
 #ifdef __cplusplus
 }
 #endif

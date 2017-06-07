@@ -332,6 +332,19 @@ void qei_lld_disable(QEIDriver *qeip) {
     qeip->tim->CR1  = 0;                    /* Timer disabled.              */
 }
 
+/**
+ * @brief   Sets the autoreload register.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     new autoreload register value
+ *
+ * @notapi
+ */
+void qei_lld_setmax(QEIDriver *qeip, uint16_t value) {
+
+    qeip->tim->ARR  = value;
+}
+
 #endif /* HAL_USE_QEI */
 
 /** @} */

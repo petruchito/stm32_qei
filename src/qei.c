@@ -179,6 +179,37 @@ qeicnt_t qeiGetCount(QEIDriver *qeip) {
 }
 
 /**
+ * @brief   Sets the autoreload value.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     maximum value of the counter *
+ *
+ * @api
+ */
+void qeiSetMax(QEIDriver *qeip, uint16_t value) {
+
+    osalSysLock();
+    qeiSetMaxI(qeip, value);
+    osalSysUnlock();
+}
+
+/**
+ * @brief   Sets the autoreload value.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     maximum value of the counter *
+ *
+ * @api
+ */
+void qeiSetMaxI(QEIDriver *qeip, uint16_t value) {
+
+  osalDbgCheckClassI();
+  osalDbgCheck(qeip != NULL);
+  qei_lld_setmax(qeip, value);
+}
+
+
+/**
  * @brief   Returns the counter delta from last reading.
  *
  * @param[in] qeip      pointer to the @p QEIDriver object

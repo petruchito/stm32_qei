@@ -126,6 +126,8 @@ extern "C" {
   void qeiStop(QEIDriver *qeip);
   void qeiEnable(QEIDriver *qeip);
   void qeiDisable(QEIDriver *qeip);
+  void qeiSetMax(QEIDriver *qeip, uint16_t value);
+  void qeiSetMaxI(QEIDriver *qeip, uint16_t value);
   qeicnt_t qeiGetCount(QEIDriver *qeip);
   qeidelta_t qeiUpdate(QEIDriver *qeip);
   qeidelta_t qeiUpdateI(QEIDriver *qeip);
