@@ -182,7 +182,7 @@ qeicnt_t qeiGetCount(QEIDriver *qeip) {
  * @brief   Sets the autoreload value.
  *
  * @param[in] qeip      pointer to the @p QEIDriver object
- * @param[in] value     maximum value of the counter *
+ * @param[in] value     maximum value of the counter
  *
  * @api
  */
@@ -197,7 +197,7 @@ void qeiSetMax(QEIDriver *qeip, uint16_t value) {
  * @brief   Sets the autoreload value.
  *
  * @param[in] qeip      pointer to the @p QEIDriver object
- * @param[in] value     maximum value of the counter *
+ * @param[in] value     maximum value of the counter
  *
  * @api
  */
