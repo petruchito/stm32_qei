@@ -161,6 +161,21 @@ void qeiDisable(QEIDriver *qeip) {
 }
 
 /**
+ * @brief   Sets the counter value.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     The new counter value.
+ *
+ * @api
+ */
+void qeiSetCount(QEIDriver *qeip, qeicnt_t value) {
+    osalSysLock();
+    qeiSetCountI(qeip, value);
+    osalSysUnlock();
+}
+
+
+/**
  * @brief   Returns the counter value.
  *
  * @param[in] qeip      pointer to the @p QEIDriver object
@@ -186,7 +201,7 @@ qeicnt_t qeiGetCount(QEIDriver *qeip) {
  *
  * @api
  */
-void qeiSetMax(QEIDriver *qeip, uint16_t value) {
+void qeiSetMax(QEIDriver *qeip, qeicnt_t value) {
 
     osalSysLock();
     qeiSetMaxI(qeip, value);
@@ -201,7 +216,7 @@ void qeiSetMax(QEIDriver *qeip, uint16_t value) {
  *
  * @api
  */
-void qeiSetMaxI(QEIDriver *qeip, uint16_t value) {
+void qeiSetMaxI(QEIDriver *qeip, qeicnt_t value) {
 
   osalDbgCheckClassI();
   osalDbgCheck(qeip != NULL);

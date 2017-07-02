@@ -113,6 +113,16 @@ typedef void (*qeicallback_t)(QEIDriver *qeip);
  */
 #define qeiGetCountI(qeip) qei_lld_get_count(qeip)
 
+/**
+ * @brief   Sets the counter value.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     New counter value
+ *
+ * @iclass
+ */
+#define qeiSetCountI(qeip, value) qei_lld_set_count(qeip, value)
+
 /*===========================================================================*/
 /* External declarations.                                                    */
 /*===========================================================================*/
@@ -128,6 +138,7 @@ extern "C" {
   void qeiDisable(QEIDriver *qeip);
   void qeiSetMax(QEIDriver *qeip, uint16_t value);
   void qeiSetMaxI(QEIDriver *qeip, uint16_t value);
+  void qeiSetCount(QEIDriver *qeip, uint16_t value);
   qeicnt_t qeiGetCount(QEIDriver *qeip);
   qeidelta_t qeiUpdate(QEIDriver *qeip);
   qeidelta_t qeiUpdateI(QEIDriver *qeip);

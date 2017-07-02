@@ -327,6 +327,16 @@ struct QEIDriver {
  */
 #define qei_lld_get_count(qeip) ((qeip)->tim->CNT)
 
+/**
+ * @brief   Sets the counter value.
+ *
+ * @param[in] qeip      pointer to the @p QEIDriver object
+ * @param[in] value     New counter value.
+ *
+ * @notapi
+ */
+#define qei_lld_set_count(qeip, value) (qeip)->tim->CNT = value;
+
 /*===========================================================================*/
 /* External declarations.                                                    */
 /*===========================================================================*/
