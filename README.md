@@ -1,2 +1,3 @@
-# stm32_qei
-STM32 QEI
+# STM32 QEI
+
+ChibiOS driver for hardware decoder of quadrature encoders for STM32 devices.
